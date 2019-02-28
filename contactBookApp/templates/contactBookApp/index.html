@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="{% url 'contact' %}"><h1>Add Contact</h1></a>
+<hr/>
+{% for eachContact in contactList %}
+<p><a href="{% url 'edit' eachContact.id %}">{{ eachContact.name }}</a>
+</p>
+<p>{{ eachContact.email }}
+</p>
+<p>{{ eachContact.phoneNumber }}
+</p>
+<p><a href="{% url 'delete' eachContact.id %}">Delete Contact</a></p>
+<hr/>
+    {% endfor %}
+
+</body>
+</html>
